@@ -6,9 +6,13 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="Theory" Height="460" Width="950" AllowsTransparency="True" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Window.Resources>
+        <XmlDataProvider Source="words.xml" x:Key="xdata" XPath="/HEAD"></XmlDataProvider>
+        <XmlDataProvider Source="time.xml" x:Key="xtime" XPath="/HEAD"></XmlDataProvider>
+        <XmlDataProvider Source="verbs.xml" x:Key="xverbs" XPath="/HEAD"></XmlDataProvider>
+    </Window.Resources>
     <Grid>
         <Border Margin="0,1,0,0" x:Name="TitleBarBorder" VerticalAlignment="Top" Height="29" BorderBrush="#f46b42" BorderThickness="0,0,0,2">
-
             <Grid x:Name="TitleBarGrid">
                 <TextBlock HorizontalAlignment="Left" Margin="15,4,0,0" Width="121" FontFamily="./Fonts/#Lithos Pro" TextDecorations="Underline" FontSize="12" Foreground="#1B2627" Text="TranslatorTeacher" TextWrapping="Wrap" d:IsStaticText="True"/>
 
@@ -27,10 +31,89 @@
                 </TransformGroup>
             </Border.RenderTransform>
         </Border>
-        <Grid RenderTransformOrigin="0.503,0.498" Margin="0,35,0,99">
-            <Button Margin="0,54,696,240" Content="Изучение слов"></Button>
-            <Button Margin="0,114,696,180" Content="Не правильные глаголы"></Button>
-            <Button Margin="0,174,696,120" Content="Иззучение времен"></Button>
+        <Grid Margin="0,10,0,-10">
+            <TabControl x:Name="tc" HorizontalAlignment="Left" Height="437" Margin="259,13,0,0" VerticalAlignment="Top" Width="691">
+                <TabItem x:Name="ti1" Header="TabItem">
+
+                    <Grid DataContext="{Binding Source={StaticResource xdata}}" Margin="12">
+                        
+                        <StackPanel>
+                            <ComboBox x:Name="menuItems" ItemsSource="{Binding XPath=MenuPosition}" IsSynchronizedWithCurrentItem="True" Margin="0,0,48,0">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock TextWrapping="Wrap" Text="{Binding XPath=@Name}"></TextBlock>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+
+                            <ListBox ItemsSource="{Binding Path=SelectedItem, ElementName=menuItems}" Name="menuItem" IsSynchronizedWithCurrentItem="True" Margin="0,12,269,12" MinHeight="1" Height="73">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock TextWrapping="Wrap" Margin="12,4,0,12" Height="346"></TextBlock>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                        </StackPanel>
+                        <ScrollViewer Margin="0,36,0,0">
+                            <StackPanel DataContext="{Binding ElementName=menuItem, Path=SelectedItem}" Grid.Column="1">
+                            
+                                <DataGrid ItemsSource="{Binding XPath=Word}" AutoGenerateColumns="False">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Binding="{Binding XPath=nword, Mode=TwoWay}" Header="Word" Width="130"/>
+                                    <DataGridTextColumn Binding="{Binding XPath=transcription, Mode=TwoWay}" Header="Transcription" Width="130" />
+                                    <DataGridTextColumn Binding="{Binding XPath=translat,    Mode=TwoWay}" Header="Translate" />
+                                </DataGrid.Columns>
+                            </DataGrid>
+                                
+                        </StackPanel>
+                        </ScrollViewer>
+
+                    </Grid>
+                </TabItem>
+                <TabItem x:Name="ti2" Header="TabItem">
+                    <Grid DataContext="{Binding Source={StaticResource xtime}}" Margin="12">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="12" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel>
+                            <ComboBox x:Name="menItems" ItemsSource="{Binding XPath=Position}" IsSynchronizedWithCurrentItem="True">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock TextWrapping="Wrap" Text="{Binding XPath=@Name}"></TextBlock>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+                            <ListBox ItemsSource="{Binding Path=SelectedItem, ElementName=menItems}" Name="menItem" IsSynchronizedWithCurrentItem="True" Margin="0,12" MinHeight="100">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock TextWrapping="Wrap" Text="{Binding XPath=Name}" Margin="0,2"></TextBlock>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                        </StackPanel>
+                        <StackPanel DataContext="{Binding ElementName=menItem, Path=SelectedItem}" Grid.Column="2">
+                            <TextBlock Text="{Binding XPath=Time}" TextWrapping="Wrap" Margin="12,4,0,12"></TextBlock>
+                        </StackPanel>
+                    </Grid>
+                </TabItem>
+                <TabItem x:Name="ti3" Header="TabItem" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="54">
+                    <Grid DataContext="{Binding Source={StaticResource xverbs}}" >
+                        <DataGrid ItemsSource="{Binding XPath=Nomenclature}" AutoGenerateColumns="False">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Binding="{Binding XPath=Infinitive, Mode=TwoWay}" Header="Infinitive" Width="150"/>
+                                <DataGridTextColumn Binding="{Binding XPath=Simple, Mode=TwoWay}" Header="Past Simple" Width="150" />
+                                <DataGridTextColumn Binding="{Binding XPath=Participle,    Mode=TwoWay}" Header="Past Participle" Width="150"/>
+                                <DataGridTextColumn Binding="{Binding XPath=Translite,    Mode=TwoWay}" Header="Перевод"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+            <Button x:Name="btn1" Content="Изучение слов" HorizontalAlignment="Left" Margin="10,71,0,0" VerticalAlignment="Top" Width="233" Click="Btn1_Click"/>
+            <Button x:Name="btn2" Content="Изучение времен" HorizontalAlignment="Left" Margin="10,128,0,0" VerticalAlignment="Top" Width="233" Click="Btn2_Click"/>
+            <Button x:Name="btn3" Content="Не правильные глаголы" HorizontalAlignment="Left" Margin="10,187,0,0" VerticalAlignment="Top" Width="233" Click="Btn3_Click"/>
         </Grid>
     </Grid>
 </Window>

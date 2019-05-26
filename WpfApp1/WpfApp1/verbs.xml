@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<HEAD>
+  <Nomenclature>
+    <Infinitive>be</Infinitive>
+    <Simple>was / were</Simple>
+    <Participle>been</Participle>
+    <Translite>быть</Translite>
+  </Nomenclature>
+  <Nomenclature>
+    <Infinitive>beat</Infinitive>
+    <Simple>beat</Simple>
+    <Participle>beaten</Participle>
+    <Translite>бить</Translite>
+  </Nomenclature>
+  <Nomenclature>
+    <Infinitive>become</Infinitive>
+    <Simple>became</Simple>
+    <Participle>become</Participle>
+    <Translite>становиться</Translite>
+  </Nomenclature>
+  <Nomenclature>
+    <Infinitive>begin</Infinitive>
+    <Simple>began</Simple>
+    <Participle>begun</Participle>
+    <Translite>начинать</Translite>
+  </Nomenclature>
+</HEAD>

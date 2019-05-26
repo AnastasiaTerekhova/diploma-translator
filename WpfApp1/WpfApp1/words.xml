@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<HEAD>
+  <MenuPosition Name="Слова на тему аэропорт">
+    <Item>
+      <Word>
+        <nword>kitchen</nword>
+        <transcription>[ˈkɪtʃɪn]</transcription>
+        <translat>кухня</translat>
+      </Word>
+      <Word>
+        <nword>fridge</nword>
+        <transcription>[frɪdʒ]</transcription>
+        <translat>холодильник</translat>
+      </Word>
+      <Word>
+        <nword>kitchen</nword>
+        <transcription>[ˈkɪtʃɪn]</transcription>
+        <translat>кухня</translat>
+      </Word>
+      <Word>
+        <nword>fridge</nword>
+        <transcription>[frɪdʒ]</transcription>
+        <translat>холодильник</translat>
+      </Word>
+      <Word>
+        <nword>kitchen</nword>
+        <transcription>[ˈkɪtʃɪn]</transcription>
+        <translat>кухня</translat>
+      </Word>
+      <Word>
+        <nword>fridge</nword>
+        <transcription>[frɪdʒ]</transcription>
+        <translat>холодильник</translat>
+      </Word>
+      <Word>
+        <nword>kitchen</nword>
+        <transcription>[ˈkɪtʃɪn]</transcription>
+        <translat>кухня</translat>
+      </Word>
+      <Word>
+        <nword>fridge</nword>
+        <transcription>[frɪdʒ]</transcription>
+        <translat>холодильник</translat>
+      </Word>
+      <Word>
+        <nword>kitchen</nword>
+        <transcription>[ˈkɪtʃɪn]</transcription>
+        <translat>кухня</translat>
+      </Word>
+      <Word>
+        <nword>fridge</nword>
+        <transcription>[frɪdʒ]</transcription>
+        <translat>холодильник</translat>
+      </Word>
+      <Word>
+        <nword>kitchen</nword>
+        <transcription>[ˈkɪtʃɪn]</transcription>
+        <translat>кухня</translat>
+      </Word>
+      <Word>
+        <nword>fridge</nword>
+        <transcription>[frɪdʒ]</transcription>
+        <translat>холодильник</translat>
+      </Word>
+    </Item>
+  </MenuPosition>
+
+  <MenuPosition Name="Слова та тему дом">
+    <Item>
+      <Word>
+        <nword>kitchfdfdfen</nword>
+        <transcription>[ˈkɪtʃɪn]</transcription>
+        <translat>кухfdfня</translat>
+      </Word>
+      <Word>
+        <nword>friffffffdddge</nword>
+        <transcription>[frɪdʒ]</transcription>
+        <translat>холодильfffffник</translat>
+      </Word>
+    </Item>
+  </MenuPosition>
+
+  <MenuPosition Name="Слова на тему фрукты">
+    <Item>
+      <Word>
+        <nword>kitchfdddddddddddddfen</nword>
+        <transcription>[ˈkɪtʃɪn]</transcription>
+        <translat>кухня</translat>
+      </Word>
+      <Word>
+        <nword>frifffffffffddge</nword>
+        <transcription>[frɪdʒ]</transcription>
+        <translat>холодильник</translat>
+      </Word>
+    </Item>
+  </MenuPosition>
+
+  <MenuPosition Name="Слова та тему овощи">
+    <Item>
+      <Word>
+        <nword>kitchen</nword>
+        <transcription>[ˈkɪtʃɪn]</transcription>
+        <translat>кухня</translat>
+      </Word>
+      <Word>
+        <nword>fridge</nword>
+        <transcription>[frɪdʒ]</transcription>
+        <translat>холодильник</translat>
+      </Word>
+    </Item>
+  </MenuPosition>
+</HEAD>

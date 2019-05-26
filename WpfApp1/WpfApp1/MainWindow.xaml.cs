@@ -93,5 +93,11 @@ namespace WpfApp1
             Practice Practice = new Practice();
             Practice.Show();
         }
+
+        private void Button2_Click(object sender, RoutedEventArgs e)
+        {
+            Theory Theory = new Theory();
+            Theory.Show();
+        }
     }
 }

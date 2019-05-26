@@ -8,16 +8,14 @@
         Title="Practice" Height="460" Width="950" AllowsTransparency="True" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Grid>
         <Border Margin="0,1,0,0" x:Name="TitleBarBorder" VerticalAlignment="Top" Height="29" BorderBrush="#f46b42" BorderThickness="0,0,0,2">
-
             <Grid x:Name="TitleBarGrid">
                 <TextBlock HorizontalAlignment="Left" Margin="15,4,0,0" Width="121" FontFamily="./Fonts/#Lithos Pro" TextDecorations="Underline" FontSize="12" Foreground="#1B2627" Text="TranslatorTeacher" TextWrapping="Wrap" d:IsStaticText="True"/>
-
-                <Button Width="21" Content="Button" x:Name="CloseButton" Cursor="Hand" HorizontalAlignment="Right" Margin="0,5,12,5" Click="CloseButton_Click" Height="Auto"  />
-                <Button Width="32" Content="Button" x:Name="MinimizeButton" Cursor="Hand" HorizontalAlignment="Right" Margin="0,0,45,5" Click="MinimizeButton_Click" Height="17" VerticalAlignment="Bottom" />
+                <Button Width="21" Content="Button" x:Name="CloseButton" Cursor="Hand" HorizontalAlignment="Right" Margin="0,5,12,5" Click="CloseButton_Click" Height="Auto"/>
+                <Button Width="32" Content="Button" x:Name="MinimizeButton" Cursor="Hand" HorizontalAlignment="Right" Margin="0,0,45,5" Click="MinimizeButton_Click" Height="17" VerticalAlignment="Bottom"/>
             </Grid>
         </Border>
 
-        <Border Margin="41,233,508,198" x:Name="TitleBarBorder1"  Height="29" BorderBrush="Black" BorderThickness="0,0,0,1" RenderTransformOrigin="0.5,0.5">
+        <Border Margin="43,223,506,208" x:Name="TitleBarBorder1"  Height="29" BorderBrush="Black" BorderThickness="0,0,0,1" RenderTransformOrigin="0.5,0.5">
             <Border.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -27,11 +25,36 @@
                 </TransformGroup>
             </Border.RenderTransform>
         </Border>
-        <Grid RenderTransformOrigin="0.503,0.498" Margin="0,35,0,99">
-            <Button Margin="0,54,696,240" Content="Повтоение слов"></Button>
-            <Button Margin="0,114,696,180" Content="Составление слов"></Button>
-            <Button Margin="0,174,696,120" Content="Составление предложений"></Button>
-            <Button Margin="0,234,696,60" Content="Словарный марафон"></Button>
+        
+        <Grid>
+            <TabControl x:Name="tc" HorizontalAlignment="Left" Height="437" Margin="259,23,0,0" VerticalAlignment="Top" Width="691">
+                <TabItem x:Name="ti1" Header="TabItem">
+                    <Grid>
+                        <Label Content="Текст на вкладке 1" HorizontalAlignment="Left" Margin="190,0,0,0" VerticalAlignment="Top"/>
+                        
+                    </Grid>
+                </TabItem>
+                <TabItem x:Name="ti2" Header="TabItem">
+                    <Grid>
+                        <Label Content="Текст на вкладке 2" HorizontalAlignment="Left" Margin="187,10,0,0" VerticalAlignment="Top"/>
+                    </Grid>
+                </TabItem>
+                <TabItem x:Name="ti3" Header="TabItem" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="54">
+                    <Grid>
+                        <Label Content="Текст на вкладке 3" HorizontalAlignment="Left" Margin="194,10,0,0" VerticalAlignment="Top"/>
+                    </Grid>
+                </TabItem>
+                <TabItem x:Name="ti4" Header="TabItem" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="54">
+                    <Grid>
+                        <Label Content="Текст на вкладке 4" HorizontalAlignment="Left" Margin="169,10,0,0" VerticalAlignment="Top"/>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+            <Button x:Name="btn1" Content="Повторение слов" HorizontalAlignment="Left" Margin="10,71,0,0" VerticalAlignment="Top" Width="233" Click="Btn1_Click"/>
+            <Button x:Name="btn2" Content="Составление слов" HorizontalAlignment="Left" Margin="10,128,0,0" VerticalAlignment="Top" Width="233" Click="Btn2_Click"/>
+            <Button x:Name="btn3" Content="Составление предложений" HorizontalAlignment="Left" Margin="10,185,0,0" VerticalAlignment="Top" Width="233" Click="Btn3_Click"/>
+            <Button x:Name="btn4" Content="Словарный марафон" HorizontalAlignment="Left" Margin="10,242,0,0" VerticalAlignment="Top" Width="233" Click="Btn4_Click"/>
         </Grid>
+        <Label Margin="466,111,305,319">ВЫБЕРИТЕ ТЕСТИРОВАНИЕ</Label>
     </Grid>
 </Window>

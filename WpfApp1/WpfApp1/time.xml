@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<HEAD>
+  <Position Name="Времена в английском языке: группа Simple">
+    <Item>
+      <Name>Present Simple</Name>
+      <Time>Present Simple или простое настоящее время, пожалуй, является самым используемым. Употребление этого английского времени необходимо для выражения регулярно-повторяющихся действий, привычек, расписаний и фактов.</Time>
+    </Item>
+    <Item>
+      <Name>Past Simple</Name>
+      <Time></Time>
+    </Item>
+    <Item>
+      <Name>Future Simple</Name>
+      <Time></Time>
+    </Item>
+  </Position>
+  <Position Name="Времена в английском языке: группа Continuous">
+    <Item>
+      <Name>Present Continuous</Name>
+      <Time></Time>
+    </Item>
+    <Item>
+      <Name>Past Continuous</Name>
+      <Time></Time>
+    </Item>
+    <Item>
+      <Name>Future Continuous</Name>
+      <Time></Time>
+    </Item>
+  </Position>
+  <Position Name="Времена в английском языке: группа Perfect">
+    <Item>
+      <Name>Present Perfect</Name>
+      <Time></Time>
+    </Item>
+    <Item>
+      <Name>Past Perfect</Name>
+      <Time></Time>
+    </Item>
+    <Item>
+      <Name>Future Perfect</Name>
+      <Time></Time>
+    </Item>
+  </Position>
+  <Position Name="Времена в английском языке: группа Perfect Continuous">
+    <Item>
+      <Name>Present Perfect Continuous</Name>
+      <Time></Time>
+    </Item>
+    <Item>
+      <Name>Past Perfect Continuous</Name>
+      <Time></Time>
+    </Item>
+    <Item>
+      <Name>Future Perfect Continuous</Name>
+      <Time></Time>
+    </Item>
+  </Position>
+</HEAD>
