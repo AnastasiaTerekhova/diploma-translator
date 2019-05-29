@@ -64,5 +64,5 @@ namespace WpfApp1
             VisualizerDevelopmentHost visualizerHost = new VisualizerDevelopmentHost(objectToVisualize, typeof(Language));
             visualizerHost.ShowVisualizer();
         }
-    } 
+    }
 }

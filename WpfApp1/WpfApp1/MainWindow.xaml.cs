@@ -99,5 +99,11 @@ namespace WpfApp1
             Theory Theory = new Theory();
             Theory.Show();
         }
+
+        private void Button3_Click(object sender, RoutedEventArgs e)
+        {
+            Dictionary Dictionary = new Dictionary();
+            Dictionary.Show();
+        }
     }
 }

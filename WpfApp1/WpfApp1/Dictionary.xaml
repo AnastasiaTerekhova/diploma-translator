@@ -1,0 +1,41 @@
+﻿<Window x:Class="WpfApp1.Dictionary"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="460" Width="950" AllowsTransparency="True" WindowStartupLocation="CenterScreen" WindowStyle="None">
+
+    
+
+    <Grid>
+
+        <Border Margin="0,1,0,0" x:Name="TitleBarBorder" VerticalAlignment="Top" Height="29" BorderBrush="#f46b42" BorderThickness="0,0,0,2">
+            <Grid x:Name="TitleBarGrid">
+                <TextBlock HorizontalAlignment="Left" Margin="15,4,0,0" Width="121" FontFamily="./Fonts/#Lithos Pro" TextDecorations="Underline" FontSize="12" Foreground="#1B2627" Text="TranslatorTeacher" TextWrapping="Wrap" d:IsStaticText="True"/>
+                <Button Width="21" Content="Button" x:Name="CloseButton" Cursor="Hand" HorizontalAlignment="Right" Margin="0,5,12,5" Click="CloseButton_Click" Height="Auto"/>
+                <Button Width="32" Content="Button" x:Name="MinimizeButton" Cursor="Hand" HorizontalAlignment="Right" Margin="0,0,45,5" Click="MinimizeButton_Click" Height="17" VerticalAlignment="Bottom"/>
+            </Grid>
+        </Border>
+        <Grid>
+            <TextBox x:Name="tbLangName" HorizontalAlignment="Left" FontSize="13px" Height="36" Margin="34,76,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="307"/>
+            <TextBox  x:Name="tbWord" HorizontalAlignment="Left" FontSize="13px" Height="30" Margin="34,158,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="140"/>
+            <TextBox x:Name="tbTranslate" HorizontalAlignment="Left" FontSize="13px" Height="30" Margin="201,158,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="140"/>
+            <Button x:Name="BtnAddWord" Content="Добавить слово" HorizontalAlignment="Left" Margin="365,167,0,0" VerticalAlignment="Top"   Width="180" Height="30" Click="BtnAddWord_Click" />
+            <Label  Foreground="#807D7C" FontSize="11" Content="Введите перевод" HorizontalAlignment="Left" Margin="201,142,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.158,-0.077" Width="113"/>
+            <ListBox x:Name="lbWords" Background="#FFE9E3" FontSize="14px" HorizontalAlignment="Left" Height="184" Margin="34,216,0,0" VerticalAlignment="Top" Width="511"/>
+            <Label Foreground="#807D7C" FontSize="11" Content="Введите слово" HorizontalAlignment="Left" Margin="34,142,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.158,-0.077" Width="103"/>
+            <Label Foreground="#807D7C" FontSize="11" Content="Введите название нового словаря" HorizontalAlignment="Left" Margin="34,59,0,0" VerticalAlignment="Top" RenderTransformOrigin="-4.316,-0.154"/>
+        </Grid>
+        <Grid>
+            <Label Content="Выберите словарь, который хотите использовать" FontSize="12px" Foreground="#807D7C" HorizontalAlignment="Left" Margin="604,106,0,0" VerticalAlignment="Top" Width="284"/>
+            <ComboBox  x:Name="ComboBox" HorizontalAlignment="Left" FontSize="14px" Margin="604,132,0,0" VerticalAlignment="Top" Width="294" Height="40"/>
+            <Label x:Name="lCurrentLang" Content="Текущий словарь:" FontSize="14px" HorizontalAlignment="Left" Margin="604,53,0,0" VerticalAlignment="Top" Width="284" Height="53"/>
+            <Button x:Name="BtnSave" Content="Сохранить" HorizontalAlignment="Left" Margin="364,418,0,0" VerticalAlignment="Top" Width="180"  Height="30" Click="BtnSave_Click"/>
+            <Button Background="White" ToolTip="Удалить текущий словарь" Content="X" HorizontalAlignment="Left" Margin="893,54,0,0" VerticalAlignment="Top" Width="47" Height="23"/>
+        </Grid>
+
+
+    </Grid>
+</Window>

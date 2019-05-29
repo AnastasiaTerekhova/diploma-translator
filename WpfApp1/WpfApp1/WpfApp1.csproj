@@ -66,6 +66,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Dictionary.xaml.cs">
+      <DependentUpon>Dictionary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dictionaryset.cs" />
     <Compile Include="Language.cs" />
     <Compile Include="Practice.xaml.cs">
       <DependentUpon>Practice.xaml</DependentUpon>
@@ -74,6 +78,10 @@
       <DependentUpon>Theory.xaml</DependentUpon>
     </Compile>
     <Compile Include="Translator.cs" />
+    <Page Include="Dictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -123,7 +131,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="XMLFile1.xml" />
+    <Resource Include="xmlFile.xml">
+      <SubType>Designer</SubType>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="words.xml">
@@ -135,6 +145,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="verbs.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Dictionaries\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
