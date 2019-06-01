@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<list>
+  <word id="0">
+    <text> помидор</text>
+    <translation> tomato</translation>
+  </word>
+  <word id="1">
+    <text>тыква</text>
+    <translation>pumpkin</translation>
+  </word>
+  <word id="2">
+    <text>огурец</text>
+    <translation>cucumber</translation>
+  </word>
+  <word id="3">
+    <text>свекла</text>
+    <translation>beet</translation>
+  </word>
+  <word id="4">
+    <text>морковь</text>
+    <translation>carrot</translation>
+  </word>
+</list>

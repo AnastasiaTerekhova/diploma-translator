@@ -15,7 +15,7 @@
             </Grid>
         </Border>
 
-        <Border Margin="43,223,506,208" x:Name="TitleBarBorder1"  Height="29" BorderBrush="Black" BorderThickness="0,0,0,1" RenderTransformOrigin="0.5,0.5">
+        <Border Margin="29,230,492,201" x:Name="TitleBarBorder1"  Height="29" BorderBrush="Black" BorderThickness="0,0,0,1" RenderTransformOrigin="0.5,0.5">
             <Border.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -25,35 +25,63 @@
                 </TransformGroup>
             </Border.RenderTransform>
         </Border>
-        
+
         <Grid>
-            <TabControl x:Name="tc" HorizontalAlignment="Left" Height="437" Margin="259,23,0,0" VerticalAlignment="Top" Width="691">
-                <TabItem x:Name="ti1" Header="TabItem">
+            <TabControl x:Name="tc" HorizontalAlignment="Left" Height="436" Margin="258,24,0,0" VerticalAlignment="Top" Width="692">
+                <TabItem x:Name="ti1" Header="Текст">
+                    <Label Content="Выберите тест" HorizontalAlignment="Left" FontSize="40" Margin="204,50,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                </TabItem>
+                <TabItem x:Name="ti2" Header="повт слов">
                     <Grid>
-                        <Label Content="Текст на вкладке 1" HorizontalAlignment="Left" Margin="190,0,0,0" VerticalAlignment="Top"/>
-                        
+
+                        <Grid Grid.ColumnSpan="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="181*"/>
+                                <ColumnDefinition Width="500*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label x:Name="lWord" FontSize="20px" Content="Label" HorizontalAlignment="Left" Margin="35,38,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                            <Label FontSize="10px" Content="Введите перевод слова" HorizontalAlignment="Left" Margin="35,128,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                            <TextBox FontSize="16px" HorizontalAlignment="Left" Height="34" Margin="35,151,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="317" Grid.Column="1"/>
+                        </Grid>
+                        <Label Content="Текст на вкладке 2" HorizontalAlignment="Left" Margin="156,10,0,0" VerticalAlignment="Top" Grid.Column="1"/>
                     </Grid>
                 </TabItem>
-                <TabItem x:Name="ti2" Header="TabItem">
-                    <Grid>
-                        <Label Content="Текст на вкладке 2" HorizontalAlignment="Left" Margin="187,10,0,0" VerticalAlignment="Top"/>
-                    </Grid>
-                </TabItem>
-                <TabItem x:Name="ti3" Header="TabItem" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="54">
+                <TabItem x:Name="ti3" Header="сост слов" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="54">
                     <Grid>
                         <Label Content="Текст на вкладке 3" HorizontalAlignment="Left" Margin="194,10,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </TabItem>
-                <TabItem x:Name="ti4" Header="TabItem" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="54">
+                <TabItem x:Name="ti4" Header="марафон">
+                    <Grid Margin="0,38,0,0">
+                        <Grid>
+                            <Label Content="Словарный марафон" FontSize="20px" HorizontalAlignment="Left" Margin="220,0,0,0" VerticalAlignment="Top"/>
+                            <Label x:Name="lMarathonTimer" Content="15 сек. (слово 1/10)" HorizontalAlignment="Left" Margin="200,74,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+                            <Label x:Name="lMarathon" Content="Марафон — marathon" HorizontalAlignment="Left" Margin="200,121,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+                            <Button x:Name="btnMarathonTrue" Content="Верно!" HorizontalAlignment="Left" Margin="143,168,0,0" VerticalAlignment="Top" Width="138" Click="BtnMarathonTrue_Click"/>
+                            <Button x:Name="btnMarathonFalse" Content="Не верно!" HorizontalAlignment="Left" Margin="354,168,0,0" VerticalAlignment="Top" Width="140" Click="BtnMarathonFalse_Click"/>
+                        </Grid>
+                    </Grid>
+                </TabItem>
+                <TabItem x:Name="ti5" Header="результ" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="54">
                     <Grid>
-                        <Label Content="Текст на вкладке 4" HorizontalAlignment="Left" Margin="169,10,0,0" VerticalAlignment="Top"/>
+                        <Grid >
+                            <ListView x:Name="lwAnswers" HorizontalAlignment="Left" Height="327" Margin="10,10,0,0" VerticalAlignment="Top" Width="661">
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn DisplayMemberBinding="{Binding word}" Header="Слово"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding translate}" Header="Перевод"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding answer}" Header="Ответ"/>
+                                        <GridViewColumn DisplayMemberBinding="{Binding result}" Header="Результат"/>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                        </Grid>
                     </Grid>
                 </TabItem>
             </TabControl>
             <Button x:Name="btn1" Content="Повторение слов" HorizontalAlignment="Left" Margin="10,71,0,0" VerticalAlignment="Top" Width="233" Click="Btn1_Click"/>
             <Button x:Name="btn2" Content="Составление слов" HorizontalAlignment="Left" Margin="10,128,0,0" VerticalAlignment="Top" Width="233" Click="Btn2_Click"/>
-            <Button x:Name="btn4" Content="Словарный марафон" HorizontalAlignment="Left" Margin="10,185,0,0" VerticalAlignment="Top" Width="233" Click="Btn4_Click"/>
+            <Button x:Name="btn3" Content="Словарный марафон" HorizontalAlignment="Left" Margin="10,185,0,0" VerticalAlignment="Top" Width="233" Click="Btn3_Click"/>
         </Grid>
-        <Label Margin="516,130,255,300">ВЫБЕРИТЕ ТЕСТИРОВАНИЕ</Label>
     </Grid>
 </Window>

@@ -21,10 +21,21 @@ namespace WpfApp1
     public partial class Dictionary : Window
     {
         public List<List<string>> words = new List<List<string>>();
-        
+        public static string CurrentDirectory { get; set; }
+
         public Dictionary()
         {
             InitializeComponent();
+            //foreach (var file in System.IO.Directory.GetFiles(Environment.CurrentDirectory + "\\..\\..\\Dictionaries\\"))
+            //ComboBox.Items.Add(file.Substring(file.LastIndexOf("\\") + 1, file.Length - file.LastIndexOf("\\") - 5));
+            //if (ComboBox.Items.Count > 0)
+            //ComboBox.SelectedIndex = 0;
+
+            foreach (var file in System.IO.Directory.GetFiles(Environment.CurrentDirectory + "\\..\\..\\Dictionaries\\"))
+                
+                ComboBox.Items.Add(file.Substring(file.LastIndexOf("\\") + 1, file.Length - file.LastIndexOf("\\") - 5));
+            if (ComboBox.Items.Count > 0)
+                ComboBox.SelectedIndex = 0;
         }
 
         class Answer 
@@ -76,6 +87,7 @@ namespace WpfApp1
             }
             xdoc.Add(list);
             xdoc.Save($"D:\\дипломм\\WpfApp1\\WpfApp1\\Dictionaries\\{tbLangName.Text}.xml");
+            //Environment.CurrentDirectory + $"\\..\\..\\Dictionaries\\{tbLangName.Text}.xml";
 
             words = new List<List<string>>();
             lbWords.Items.Clear();

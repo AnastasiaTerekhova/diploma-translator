@@ -55,6 +55,9 @@ namespace WpfApp1
             this.WindowState = WindowState.Minimized;
         }
 
-        
+        private void tc_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

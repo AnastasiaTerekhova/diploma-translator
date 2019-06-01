@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<list>
+  <word id="0">
+    <text> слово</text>
+    <translation> слово1</translation>
+  </word>
+  <word id="1">
+    <text>слово</text>
+    <translation>слово2</translation>
+  </word>
+  <word id="2">
+    <text>слово</text>
+    <translation>слово3</translation>
+  </word>
+</list>

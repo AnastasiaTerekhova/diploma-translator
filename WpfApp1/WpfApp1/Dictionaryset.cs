@@ -8,8 +8,8 @@ namespace WpfApp1
 {
     class Dictionaryset
     {
-        public string Name;
         
+
     }
 }
 

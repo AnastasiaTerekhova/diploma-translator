@@ -21,7 +21,7 @@
             </Grid>
         </Border>
 
-        <Border Margin="41,239,508,192" x:Name="TitleBarBorder1"  Height="29" BorderBrush="Black" BorderThickness="0,0,0,1" RenderTransformOrigin="0.5,0.5">
+        <Border Margin="27,229,493,200" x:Name="TitleBarBorder1" BorderBrush="Black" BorderThickness="0,0,0,1" RenderTransformOrigin="0.5,0.5">
             <Border.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -31,8 +31,18 @@
                 </TransformGroup>
             </Border.RenderTransform>
         </Border>
-        <Grid Margin="0,10,0,-10">
-            <TabControl x:Name="tc" HorizontalAlignment="Left" Height="437" Margin="259,13,0,0" VerticalAlignment="Top" Width="691">
+        <Border Margin="0,428,2,1" BorderBrush="Black" BorderThickness="0,0,0,1" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.05"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+        </Border>
+        <Grid >
+            <TabControl x:Name="tc" HorizontalAlignment="Left" Height="436" Margin="258,24,0,0" VerticalAlignment="Top" Width="692" SelectionChanged="tc_SelectionChanged">
                 <TabItem x:Name="ti1" Header="TabItem">
                     <Grid DataContext="{Binding Source={StaticResource xdata}}" Margin="12">
                         <StackPanel>
@@ -96,15 +106,15 @@
                 <TabItem x:Name="ti3" Header="TabItem" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="54">
                     <Grid DataContext="{Binding Source={StaticResource xverbs}}" >
                         <ScrollViewer>
-                        <DataGrid ItemsSource="{Binding XPath=Nomenclature}" AutoGenerateColumns="False">
-                            <DataGrid.Columns>
-                                <DataGridTextColumn Binding="{Binding XPath=Infinitive, Mode=TwoWay}" Header="Infinitive" Width="150"/>
-                                <DataGridTextColumn Binding="{Binding XPath=Simple, Mode=TwoWay}" Header="Past Simple" Width="150" />
-                                <DataGridTextColumn Binding="{Binding XPath=Participle,    Mode=TwoWay}" Header="Past Participle" Width="150"/>
-                                <DataGridTextColumn Binding="{Binding XPath=Translite,    Mode=TwoWay}" Header="Перевод"/>
-                            </DataGrid.Columns>
-                        </DataGrid>
-                            </ScrollViewer>
+                            <DataGrid ItemsSource="{Binding XPath=Nomenclature}" AutoGenerateColumns="False">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Binding="{Binding XPath=Infinitive, Mode=TwoWay}" Header="Infinitive" Width="150"/>
+                                    <DataGridTextColumn Binding="{Binding XPath=Simple, Mode=TwoWay}" Header="Past Simple" Width="150" />
+                                    <DataGridTextColumn Binding="{Binding XPath=Participle,    Mode=TwoWay}" Header="Past Participle" Width="150"/>
+                                    <DataGridTextColumn Binding="{Binding XPath=Translite,    Mode=TwoWay}" Header="Перевод"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </ScrollViewer>
                     </Grid>
                 </TabItem>
             </TabControl>
