@@ -19,14 +19,21 @@ using System.Xml.Linq;
 
 namespace WpfApp1
 {
-    /// <summary>
-    /// Логика взаимодействия для Practice.xaml
-    /// </summary>
     public partial class Practice : Window
     {
 
+        class Answer
+        {
+            public string word { get; set; }
+            public string translate { get; set; }
+            public string answer { get; set; }
+            public string result { get; set; }
+        }
+        Dictionary dict = new Dictionary();
+        List<Answer> answers = new List<Answer>();
+
         List<List<string>> CurrentDictionary = null;
-        Random rand = new Random(DateTime.Now.Millisecond * DateTime.Now.Second); // Чтоб точно рандом
+        Random rand = new Random(DateTime.Now.Millisecond * DateTime.Now.Second);
 
         #region Для марафона
         int mrthSec = 15; // секунд осталось
@@ -65,11 +72,18 @@ namespace WpfApp1
         private void Btn1_Click(object sender, RoutedEventArgs e)
         {
             tc.SelectedIndex = 1;
+            if (System.IO.Directory.GetFiles(Environment.CurrentDirectory + "\\..\\..\\Dictionaries\\").Length < 1)
+            {
+                MessageBox.Show("Отсутствуют словари.", "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
         }
 
         private void Btn2_Click(object sender, RoutedEventArgs e)
         {
             tc.SelectedIndex = 2;
+
         }
 
         private void Btn3_Click(object sender, RoutedEventArgs e)
@@ -88,7 +102,7 @@ namespace WpfApp1
                 return;
             }
 
-            LoadDictionary(System.IO.Directory.GetFiles(Environment.CurrentDirectory + "\\..\\..\\Dictionaries\\")[0]);
+            LoadDictionary(Environment.CurrentDirectory + $"\\..\\..\\Dictionaries\\{dict.ComboBox.SelectedItem}.xml");
 
             MarathonNextWord();
         }
@@ -157,7 +171,7 @@ namespace WpfApp1
                 else// если ждем ответ "не верно"
                 {
                     int anotherInd = ind;
-                    while (anotherInd == ind) // если ВДРУГ рандом кинет нас снова на этот же индекс, то слова запросим новый, чтобы не вводить юзера в  заблуждение
+                    while (anotherInd == ind)
                         anotherInd = rand.Next(CurrentDictionary.Count);
                     translate = CurrentDictionary[anotherInd][1];
                 }
@@ -183,6 +197,58 @@ namespace WpfApp1
             CheckMarathonWord(false);
         }
 
+        int n = -1;
+        private void NextTestWord() //вывод следующего слова или результата
+        {
+            if (++n >= CurrentDictionary.Count) // если следующий элемент отсутствует, то переходим к результатам.
+                tc.SelectedIndex = 4;
+            else // иначе следующее слово
+            {
+                lWord.Content = CurrentDictionary[n][0];
+                tbTestTranslate.Text = "";
+            }
+        }
+        private void tbTestTranslate_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                answers.Add(new Answer()
+                {
+                    answer = tbTestTranslate.Text,
+                    word = CurrentDictionary[n][0],
+                    translate = CurrentDictionary[n][1],
+                    result = CurrentDictionary[n][1].ToLower() == tbTestTranslate.Text.ToLower() ? "Верно" : "Неверно"
+                });
+                NextTestWord();
+            }
+        }
+
+        private void tc_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            switch (tc.SelectedIndex)
+            {
+                case 1:
+                    LoadDictionary(Environment.CurrentDirectory + $"\\..\\..\\Dictionaries\\{dict.ComboBox.SelectedItem}.xml");
+                    n = -1;
+                    answers.Clear();
+                    Random r = new Random();
+                    for (int i = 0; i < CurrentDictionary.Count; i++)
+                    {
+                        int randIndex = r.Next(CurrentDictionary.Count);
+                        var word = CurrentDictionary[i];
+                        CurrentDictionary[i] = CurrentDictionary[randIndex];
+                        CurrentDictionary[randIndex] = word;
+                    }
+
+                    NextTestWord();
+                    break;
+
+                case 4: // итоги
+                    lwAnswers.ItemsSource = null;
+                    lwAnswers.ItemsSource = answers;
+                    break;
+            }
+        }
     }
 }
 

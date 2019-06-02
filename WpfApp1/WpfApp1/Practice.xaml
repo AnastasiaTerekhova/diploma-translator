@@ -27,7 +27,7 @@
         </Border>
 
         <Grid>
-            <TabControl x:Name="tc" HorizontalAlignment="Left" Height="436" Margin="258,24,0,0" VerticalAlignment="Top" Width="692">
+            <TabControl x:Name="tc" HorizontalAlignment="Left" Height="436" Margin="258,24,0,0" VerticalAlignment="Top" Width="692" SelectionChanged="tc_SelectionChanged">
                 <TabItem x:Name="ti1" Header="Текст">
                     <Label Content="Выберите тест" HorizontalAlignment="Left" FontSize="40" Margin="204,50,0,0" VerticalAlignment="Top" Grid.Column="1"/>
                 </TabItem>
@@ -41,7 +41,7 @@
                             </Grid.ColumnDefinitions>
                             <Label x:Name="lWord" FontSize="20px" Content="Label" HorizontalAlignment="Left" Margin="35,38,0,0" VerticalAlignment="Top" Grid.Column="1"/>
                             <Label FontSize="10px" Content="Введите перевод слова" HorizontalAlignment="Left" Margin="35,128,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                            <TextBox FontSize="16px" HorizontalAlignment="Left" Height="34" Margin="35,151,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="317" Grid.Column="1"/>
+                            <TextBox x:Name="tbTestTranslate" FontSize="16px" HorizontalAlignment="Left" Height="34" Margin="35,151,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="317" Grid.Column="1" KeyUp="tbTestTranslate_KeyUp"/>
                         </Grid>
                         <Label Content="Текст на вкладке 2" HorizontalAlignment="Left" Margin="156,10,0,0" VerticalAlignment="Top" Grid.Column="1"/>
                     </Grid>

@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="460" Width="950" AllowsTransparency="True" WindowStartupLocation="CenterScreen" WindowStyle="None">
 
-    
+
 
     <Grid>
 
@@ -29,11 +29,9 @@
             <Label Foreground="#807D7C" FontSize="11" Content="Введите название нового словаря" HorizontalAlignment="Left" Margin="34,59,0,0" VerticalAlignment="Top" RenderTransformOrigin="-4.316,-0.154"/>
         </Grid>
         <Grid>
-            <Label Content="Выберите словарь, который хотите использовать" FontSize="12px" Foreground="#807D7C" HorizontalAlignment="Left" Margin="604,106,0,0" VerticalAlignment="Top" Width="284"/>
-            <ComboBox  x:Name="ComboBox" HorizontalAlignment="Left" FontSize="14px" Margin="604,132,0,0" VerticalAlignment="Top" Width="294" Height="40"/>
-            <Label x:Name="lCurrentLang" Content="Текущий словарь:" FontSize="14px" HorizontalAlignment="Left" Margin="604,53,0,0" VerticalAlignment="Top" Width="284" Height="53"/>
+            <Label Content="Выберите словарь, который хотите использовать" FontSize="12px" Foreground="#807D7C" HorizontalAlignment="Left" Margin="604,58,0,0" VerticalAlignment="Top" Width="284"/>
+            <ComboBox  x:Name="ComboBox" HorizontalAlignment="Left" FontSize="14px" Margin="604,84,0,0" VerticalAlignment="Top" Width="294" Height="40"/>
             <Button x:Name="BtnSave" Content="Сохранить" HorizontalAlignment="Left" Margin="364,418,0,0" VerticalAlignment="Top" Width="180"  Height="30" Click="BtnSave_Click"/>
-            <Button Background="White" BorderThickness="0" ToolTip="Удалить текущий словарь" Content="X" HorizontalAlignment="Left" Margin="893,54,0,0" VerticalAlignment="Top" Width="47" Height="23"/>
         </Grid>
 
 
