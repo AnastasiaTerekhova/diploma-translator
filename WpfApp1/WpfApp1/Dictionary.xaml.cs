@@ -32,7 +32,7 @@ namespace WpfApp1
                 ComboBox.Items.Add(file.Substring(file.LastIndexOf("\\") + 1, file.Length - file.LastIndexOf("\\") - 5));
             if (ComboBox.Items.Count > 0)
                 ComboBox.SelectedIndex = 0;
-            ComboBox.SelectedIndex = indexDict;
+            ComboBox.SelectedIndex = Properties.Settings.Default.indexDict;
         }
 
         class Answer 
@@ -44,7 +44,7 @@ namespace WpfApp1
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
-            indexDict = ComboBox.SelectedIndex;
+            Properties.Settings.Default.indexDict = ComboBox.SelectedIndex;
             this.Close();
         }
 
@@ -84,7 +84,6 @@ namespace WpfApp1
                 index++;
             }
             xdoc.Add(list);
-            //xdoc.Save($"D:\\дипломм\\WpfApp1\\WpfApp1\\Dictionaries\\{tbLangName.Text}.xml");
             xdoc.Save(Environment.CurrentDirectory + $"\\..\\..\\Dictionaries\\{tbLangName.Text}.xml");
 
             words = new List<List<string>>();

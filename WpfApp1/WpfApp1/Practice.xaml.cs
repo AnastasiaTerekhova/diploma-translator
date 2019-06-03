@@ -78,11 +78,24 @@ namespace WpfApp1
                 return;
             }
 
+            char[] s = tbTestTranslate.Text.ToArray();
+            for (int i = 0; i < s.Length - 1; i += 2)
+            {
+                char x = s[i];
+                s[i] = s[i + 1];
+                s[i + 1] = x;
+            }
+            tbTestTranslate.Text = String.Join("", s);
         }
 
         private void Btn2_Click(object sender, RoutedEventArgs e)
         {
             tc.SelectedIndex = 2;
+            if (System.IO.Directory.GetFiles(Environment.CurrentDirectory + "\\..\\..\\Dictionaries\\").Length < 1)
+            {
+                MessageBox.Show("Отсутствуют словари.", "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
 
         }
 
@@ -208,6 +221,19 @@ namespace WpfApp1
                 tbTestTranslate.Text = "";
             }
         }
+        private void NextWord() //вывод следующего слова или результата
+        {
+            if (++n >= CurrentDictionary.Count)
+                tc.SelectedIndex = 4;
+            else
+            {
+                var rnd = new Random();
+                var shuffle = string.Join("", CurrentDictionary[n][1].OrderBy(x => rnd.Next()));
+                wordRandom.Content = shuffle;
+                wordAnswer.Text = "";
+            }
+        }
+
         private void tbTestTranslate_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
@@ -222,16 +248,30 @@ namespace WpfApp1
                 NextTestWord();
             }
         }
-
+        private void wordAnswer_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                answers.Add(new Answer()
+                {
+                    answer = wordAnswer.Text,
+                    word = CurrentDictionary[n][0],
+                    translate = CurrentDictionary[n][1],
+                    result = CurrentDictionary[n][0].ToLower() == wordAnswer.Text.ToLower() ? "Верно" : "Неверно"
+                }); 
+                NextWord();
+            }
+        }
         private void tc_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            Random r = new Random();
             switch (tc.SelectedIndex)
             {
                 case 1:
                     LoadDictionary(Environment.CurrentDirectory + $"\\..\\..\\Dictionaries\\{dict.ComboBox.SelectedItem}.xml");
                     n = -1;
                     answers.Clear();
-                    Random r = new Random();
+                
                     for (int i = 0; i < CurrentDictionary.Count; i++)
                     {
                         int randIndex = r.Next(CurrentDictionary.Count);
@@ -242,13 +282,28 @@ namespace WpfApp1
 
                     NextTestWord();
                     break;
-
+                case 2:
+                    LoadDictionary(Environment.CurrentDirectory + $"\\..\\..\\Dictionaries\\{dict.ComboBox.SelectedItem}.xml");
+                    n = -1; // -1 потому что при NextTestWord() он первым делом увеличится на 1
+                    answers.Clear();
+                    for (int i = 0; i < CurrentDictionary.Count; i++)
+                    {
+                        int randIndex = r.Next(CurrentDictionary.Count); // случайное целое от 0 до макс элементов
+                                                                         // меняем текущий и рандомно выбранный местами
+                        var word = CurrentDictionary[i];
+                        CurrentDictionary[i] = CurrentDictionary[randIndex];
+                        CurrentDictionary[randIndex] = word;
+                    }
+                    NextWord();
+                    break;
                 case 4: // итоги
                     lwAnswers.ItemsSource = null;
                     lwAnswers.ItemsSource = answers;
                     break;
             }
         }
+        
+
     }
 }
 

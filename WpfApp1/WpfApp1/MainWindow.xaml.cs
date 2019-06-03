@@ -40,6 +40,7 @@ namespace WpfApp1
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+            Properties.Settings.Default.Save();
         }
 
         private void MinimizeButton_Click(object sender, RoutedEventArgs e)
