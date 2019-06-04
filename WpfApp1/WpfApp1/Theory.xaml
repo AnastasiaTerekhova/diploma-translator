@@ -21,26 +21,17 @@
             </Grid>
         </Border>
 
-        <Border Margin="27,229,493,200" x:Name="TitleBarBorder1" BorderBrush="Black" BorderThickness="0,0,0,1" RenderTransformOrigin="0.5,0.5">
+        <Border Margin="28,228,492,199" x:Name="TitleBarBorder1" BorderBrush="Black" BorderThickness="0,0,0,1" RenderTransformOrigin="0.5,0.5">
             <Border.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
                     <SkewTransform/>
-                    <RotateTransform Angle="-89.941"/>
+                    <RotateTransform Angle="-89.755"/>
                     <TranslateTransform/>
                 </TransformGroup>
             </Border.RenderTransform>
         </Border>
-        <Border Margin="0,428,2,1" BorderBrush="Black" BorderThickness="0,0,0,1" RenderTransformOrigin="0.5,0.5">
-            <Border.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.05"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Border.RenderTransform>
-        </Border>
+      
         <Grid >
             <TabControl x:Name="tc" HorizontalAlignment="Left" Height="436" Margin="258,24,0,0" VerticalAlignment="Top" Width="692" SelectionChanged="tc_SelectionChanged">
                 <TabItem x:Name="ti1" Header="TabItem">

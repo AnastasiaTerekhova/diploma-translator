@@ -39,8 +39,8 @@
                                 <ColumnDefinition Width="181*"/>
                                 <ColumnDefinition Width="500*"/>
                             </Grid.ColumnDefinitions>
-                            <Label x:Name="lWord" FontSize="20px" Content="Label" HorizontalAlignment="Left" Margin="143,54,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                            <Label FontSize="10px" Content="Введите перевод слова" HorizontalAlignment="Left" Margin="20,161,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                            <Label x:Name="lWord" FontSize="24" FontWeight="Bold" Content="Label" HorizontalAlignment="Left" Margin="143,54,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                            <Label Foreground="#807D7C" FontSize="10px" Content="Введите перевод слова" HorizontalAlignment="Left" Margin="20,161,0,0" VerticalAlignment="Top" Grid.Column="1"/>
                             <TextBox x:Name="tbTestTranslate" FontSize="16px" HorizontalAlignment="Left" Height="34" Margin="20,184,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="317" Grid.Column="1" KeyUp="tbTestTranslate_KeyUp"/>
 
                         </Grid>
@@ -52,8 +52,8 @@
                             <ColumnDefinition Width="181*"/>
                             <ColumnDefinition Width="500*"/>
                         </Grid.ColumnDefinitions>
-                        <Label x:Name="wordRandom" FontSize="20px" Content="tarnlsarot" HorizontalAlignment="Left" Margin="143,54,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                        <Label FontSize="10px" Content="Введите правильно слово" HorizontalAlignment="Left" Margin="20,161,0,0" VerticalAlignment="Top" Grid.Column="1" Width="242"/>
+                        <Label x:Name="wordRandom" FontSize="24" FontWeight="Bold" Content="tarnlsarot" HorizontalAlignment="Left" Margin="118,50,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                        <Label Foreground="#807D7C" FontSize="10px" Content="Введите правильно слово" HorizontalAlignment="Left" Margin="20,161,0,0" VerticalAlignment="Top" Grid.Column="1" Width="242"/>
                         <TextBox x:Name="wordAnswer" FontSize="16px" HorizontalAlignment="Left" Height="34" Margin="20,184,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="317" Grid.Column="1" KeyUp="wordAnswer_KeyUp"/>
                         <Label Content="Текст на вкладке 3" HorizontalAlignment="Left" Margin="194,10,0,0" VerticalAlignment="Top"/>
                     </Grid>

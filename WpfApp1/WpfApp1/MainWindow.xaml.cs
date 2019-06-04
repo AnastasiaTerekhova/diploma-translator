@@ -106,5 +106,11 @@ namespace WpfApp1
             Dictionary Dictionary = new Dictionary();
             Dictionary.Show();
         }
+
+        private void Button4_Click(object sender, RoutedEventArgs e)
+        {
+            Settings Settings = new Settings();
+            Settings.Show();
+        }
     }
 }

@@ -6,9 +6,6 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="MainWindow" Height="460" Width="950" AllowsTransparency="True" WindowStartupLocation="CenterScreen" WindowStyle="None">
-
-
-
     <Grid>
 
         <Border Margin="0,1,0,0" x:Name="TitleBarBorder" VerticalAlignment="Top" Height="29" BorderBrush="#f46b42" BorderThickness="0,0,0,2">
@@ -23,9 +20,9 @@
             <TextBox  x:Name="tbWord" HorizontalAlignment="Left" FontSize="13px" Height="30" Margin="34,158,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="140"/>
             <TextBox x:Name="tbTranslate" HorizontalAlignment="Left" FontSize="13px" Height="30" Margin="201,158,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="140"/>
             <Button x:Name="BtnAddWord" Content="Добавить слово" HorizontalAlignment="Left" Margin="365,167,0,0" VerticalAlignment="Top"   Width="180" Height="30" Click="BtnAddWord_Click" />
-            <Label  Foreground="#807D7C" FontSize="11" Content="Введите перевод" HorizontalAlignment="Left" Margin="201,142,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.158,-0.077" Width="113"/>
+            <Label  Foreground="#807D7C" FontSize="11" Content="Введите перевод слова" HorizontalAlignment="Left" Margin="201,142,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.158,-0.077" Width="140"/>
             <ListBox x:Name="lbWords" Background="#FFE9E3" FontSize="14px" HorizontalAlignment="Left" Height="184" Margin="34,216,0,0" VerticalAlignment="Top" Width="511"/>
-            <Label Foreground="#807D7C" FontSize="11" Content="Введите слово" HorizontalAlignment="Left" Margin="34,142,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.158,-0.077" Width="103"/>
+            <Label Foreground="#807D7C" FontSize="11" Content="Введите слово на русском" HorizontalAlignment="Left" Margin="34,142,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.158,-0.077" Width="162"/>
             <Label Foreground="#807D7C" FontSize="11" Content="Введите название нового словаря" HorizontalAlignment="Left" Margin="34,59,0,0" VerticalAlignment="Top" RenderTransformOrigin="-4.316,-0.154"/>
         </Grid>
         <Grid>
