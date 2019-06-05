@@ -29,3 +29,5 @@ D:\дипломм\WpfApp1\WpfApp1\obj\Debug\Theory.g.cs
 D:\дипломм\WpfApp1\WpfApp1\obj\Debug\Theory.baml
 D:\дипломм\WpfApp1\WpfApp1\obj\Debug\Dictionary.g.cs
 D:\дипломм\WpfApp1\WpfApp1\obj\Debug\Dictionary.baml
+D:\дипломм\WpfApp1\WpfApp1\obj\Debug\Settings.g.cs
+D:\дипломм\WpfApp1\WpfApp1\obj\Debug\Settings.baml
