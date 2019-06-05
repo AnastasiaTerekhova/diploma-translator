@@ -16,8 +16,8 @@
             <Grid x:Name="TitleBarGrid">
                 <TextBlock HorizontalAlignment="Left" Margin="15,4,0,0" Width="121" FontFamily="./Fonts/#Lithos Pro" TextDecorations="Underline" FontSize="12" Foreground="#1B2627" Text="TranslatorTeacher" TextWrapping="Wrap" d:IsStaticText="True"/>
 
-                <Button Width="21" Content="Button" x:Name="CloseButton" Cursor="Hand" HorizontalAlignment="Right" Margin="0,5,12,5" Click="CloseButton_Click" Height="Auto"  />
-                <Button Width="32" Content="Button" x:Name="MinimizeButton" Cursor="Hand" HorizontalAlignment="Right" Margin="0,0,45,5" Click="MinimizeButton_Click" Height="17" VerticalAlignment="Bottom" />
+                <Button Width="21" Padding="1 -2 1 1" Content="x" x:Name="CloseButton" Cursor="Hand" HorizontalAlignment="Right" Margin="0,5,12,5" Click="CloseButton_Click" Height="Auto"/>
+                <Button Width="31" Padding="1 -4 1 1" Content="____" x:Name="MinimizeButton" Cursor="Hand" HorizontalAlignment="Right" Margin="0,0,45,5" Click="MinimizeButton_Click" Height="17" VerticalAlignment="Bottom" />
             </Grid>
         </Border>
 

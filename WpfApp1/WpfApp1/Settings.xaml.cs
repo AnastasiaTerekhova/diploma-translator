@@ -57,7 +57,7 @@ namespace WpfApp1
 
         private void tb_KeyPress(object sender, KeyEventArgs e)
         {
-            e.Handled = !(Char.IsDigit(e.Key.ToString()[e.Key.ToString().Length - 1])); //  извращение, но только так вышло
+            e.Handled = !(Char.IsDigit(e.Key.ToString()[e.Key.ToString().Length - 1]));
         }
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)

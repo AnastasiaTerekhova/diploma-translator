@@ -10,8 +10,8 @@
         <Border Margin="0,1,0,0" x:Name="TitleBarBorder" VerticalAlignment="Top" Height="29" BorderBrush="#f46b42" BorderThickness="0,0,0,2">
             <Grid x:Name="TitleBarGrid">
                 <TextBlock HorizontalAlignment="Left" Margin="15,4,0,0" Width="121" FontFamily="./Fonts/#Lithos Pro" TextDecorations="Underline" FontSize="12" Foreground="#1B2627" Text="TranslatorTeacher" TextWrapping="Wrap" d:IsStaticText="True"/>
-                <Button Width="21" Content="Button" x:Name="CloseButton" Cursor="Hand" HorizontalAlignment="Right" Margin="0,5,12,5" Click="CloseButton_Click" Height="Auto"/>
-                <Button Width="32" Content="Button" x:Name="MinimizeButton" Cursor="Hand" HorizontalAlignment="Right" Margin="0,0,45,5" Click="MinimizeButton_Click" Height="17" VerticalAlignment="Bottom"/>
+                <Button Width="21" Padding="1 -2 1 1" Content="x" x:Name="CloseButton" Cursor="Hand" HorizontalAlignment="Right" Margin="0,5,12,5" Click="CloseButton_Click" Height="Auto"/>
+                <Button Width="31" Padding="1 -4 1 1" Content="____" x:Name="MinimizeButton" Cursor="Hand" HorizontalAlignment="Right" Margin="0,0,45,5" Click="MinimizeButton_Click" Height="17" VerticalAlignment="Bottom" />
             </Grid>
         </Border>
         <Grid>
@@ -25,10 +25,10 @@
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
-            <GridSplitter Grid.Column="1" Background="LightGreen" Grid.Row="0" ShowsPreview="False" Width="3"
-        HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="0,32,0,0" />
-            <GridSplitter Grid.Row="1" Background="LightGreen" Grid.ColumnSpan="3" Height="3"
-        HorizontalAlignment="Stretch" VerticalAlignment="Center" />
+            <GridSplitter Grid.Column="1" Grid.Row="0" ShowsPreview="False" Width="3"
+        HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="0,32,0,80" Grid.RowSpan="3" />
+            <GridSplitter Grid.Row="2" Grid.ColumnSpan="3" Height="2"
+        HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,150,0,78" />
             <Canvas Grid.Column="0" Grid.Row="0" Margin="0,32,0,0">
                 <TextBlock></TextBlock>
                 <CheckBox x:Name="cbMouseLock" FontSize="18" Content="Блокировка мыши" Canvas.Left="25" Canvas.Top="21" Width="222"/>
@@ -37,22 +37,25 @@
 
             </Canvas>
             <Canvas Grid.Column="2" Grid.Row="0"  Margin="0,32,0,0">
-                <TextBlock Canvas.Left="10" FontSize="18" Canvas.Top="10">Укажите:</TextBlock>
-                <TextBlock Canvas.Left="127" Canvas.Top="81" Width="210"><Run Text="сколько минут уделять одному тесту"/></TextBlock>
-                <TextBox x:Name="tbMinutesForTest" FontSize="18" Height="34" Canvas.Left="127" TextWrapping="Wrap" Text="" Canvas.Top="97" Width="199" KeyUp="tb_KeyPress" KeyDown="tb_KeyPress"/>
-                <TextBlock Canvas.Left="127" Canvas.Top="136" Width="256"><Run Text="сколько использовать слов в тесте из словаря"/></TextBlock>
-                <TextBox x:Name="tbWordsInTest" FontSize="18" Height="34" Canvas.Left="127" TextWrapping="Wrap" Text="" Canvas.Top="152" Width="199" KeyUp="tb_KeyPress" KeyDown="tb_KeyPress"/>
-                <TextBlock Canvas.Left="127" Canvas.Top="17" Width="183"><Run Text="интервал между тестами"/></TextBlock>
-                <TextBox x:Name="tbInterval" FontSize="18" Height="34" Canvas.Left="127" TextWrapping="Wrap" Text="" Canvas.Top="33" Width="199" KeyDown="tb_KeyPress" KeyUp="tb_KeyPress"/>
+                <TextBlock Canvas.Left="-452" FontSize="18" Canvas.Top="136">Укажите:</TextBlock>
+                <TextBlock FontSize="15" Canvas.Left="-465" Canvas.Top="239" Width="256" Height="18" Text="сколько минут уделять одному тесту"/>
+                <TextBox x:Name="tbMinutesForTest" FontSize="18" Height="35" Canvas.Left="-209" TextWrapping="Wrap" Text="" Canvas.Top="222" Width="110" KeyUp="tb_KeyPress" KeyDown="tb_KeyPress"/>
+                <TextBlock FontSize="15" Canvas.Left="-465" Canvas.Top="296" Width="319"><Run Text="сколько использовать слов в тесте из словаря"/></TextBlock>
+                <TextBox x:Name="tbWordsInTest" FontSize="18" Height="34" Canvas.Left="-146" TextWrapping="Wrap" Text="" Canvas.Top="282" Width="110" KeyUp="tb_KeyPress" KeyDown="tb_KeyPress"/>
+                <TextBlock FontSize="15" Canvas.Left="-467" Canvas.Top="185" Width="183"><Run Text="интервал между тестами"/></TextBlock>
+                <TextBox x:Name="tbInterval" FontSize="18" Height="34" Canvas.Left="-293" TextWrapping="Wrap" Text="" Canvas.Top="171" Width="110" KeyDown="tb_KeyPress" KeyUp="tb_KeyPress"/>
 
             </Canvas>
-            <Canvas Grid.ColumnSpan="3" Grid.Row="2">
-                <TextBlock Canvas.Left="56" Canvas.Top="10" FontSize="18">Пользовательские словари :</TextBlock>
-                <GroupBox  Height="144" Canvas.Left="10" Canvas.Top="39" Width="463"/>
-                <Button x:Name="btnDelSelDic" Content="Удалить выбранное" Canvas.Left="102" Canvas.Top="188" Width="301" Click="BtnDelSelDic_Click"/>
-                <Button x:Name="btnSave" Content="Сохранить все" Canvas.Left="768" Canvas.Top="156" Width="156" Height="53" Click="BtnSave_Click"/>
-                <ListBox x:Name="lbDictionaties" Height="125" Canvas.Left="10" Canvas.Top="58" Width="463">
+
+            <Canvas Grid.ColumnSpan="3" Grid.Row="2" Margin="0,10,0,0">
+
+                <GroupBox FontWeight="Bold" Foreground="white"  HorizontalAlignment="Center" FontSize="15" Header="Пользовательские словари"  Background="white"  Height="304" Canvas.Left="477" Canvas.Top="-210" Width="473"/>
+                <Button x:Name="btnDelSelDic" Content="Удалить словарь" Canvas.Left="631" Canvas.Top="99" Width="185" Click="BtnDelSelDic_Click"/>
+
+                <ListBox FontSize="15" x:Name="lbDictionaties" Height="266" Canvas.Left="488" Canvas.Top="-172" Width="452">
                 </ListBox>
+
+                <Button x:Name="btnSave" Content="Сохранить все" Canvas.Left="404" Canvas.Top="157" Width="156" Height="53" Click="BtnSave_Click"/>
             </Canvas>
         </Grid>
     </Grid>
