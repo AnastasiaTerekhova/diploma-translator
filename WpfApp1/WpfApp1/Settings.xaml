@@ -31,19 +31,19 @@
         HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,150,0,78" />
             <Canvas Grid.Column="0" Grid.Row="0" Margin="0,32,0,0">
                 <TextBlock></TextBlock>
-                <CheckBox x:Name="cbMouseLock" FontSize="18" Content="Блокировка мыши" Canvas.Left="25" Canvas.Top="21" Width="222"/>
-                <CheckBox x:Name="cbKeyboardLock" FontSize="18" Content="Блокировка клавиатуры" Canvas.Left="25" Canvas.Top="52" Width="242"/>
-                <CheckBox x:Name="cbAutoload" FontSize="18" Content="Автозагрузка вместе с Windows" Canvas.Left="25" Canvas.Top="83"/>
+                <CheckBox x:Name="cbMouseLock" FontSize="16" Content="Блокировка мыши" Canvas.Left="25" Canvas.Top="21" Width="222"/>
+                <CheckBox x:Name="cbKeyboardLock" FontSize="16" Content="Блокировка клавиатуры" Canvas.Left="25" Canvas.Top="52" Width="242"/>
+                <CheckBox x:Name="cbAutoload" FontSize="16" Content="Автозагрузка вместе с Windows" Canvas.Left="25" Canvas.Top="83"/>
 
             </Canvas>
             <Canvas Grid.Column="2" Grid.Row="0"  Margin="0,32,0,0">
                 <TextBlock Canvas.Left="-452" FontSize="18" Canvas.Top="136">Укажите:</TextBlock>
                 <TextBlock FontSize="15" Canvas.Left="-465" Canvas.Top="239" Width="256" Height="18" Text="сколько минут уделять одному тесту"/>
-                <TextBox x:Name="tbMinutesForTest" FontSize="18" Height="35" Canvas.Left="-209" TextWrapping="Wrap" Text="" Canvas.Top="222" Width="110" KeyUp="tb_KeyPress" KeyDown="tb_KeyPress"/>
+                <TextBox x:Name="tbMinutesForTest" FontSize="18" Height="35" Canvas.Left="-204" TextWrapping="Wrap" Text="" Canvas.Top="222" Width="110" KeyUp="tb_KeyPress" KeyDown="tb_KeyPress"/>
                 <TextBlock FontSize="15" Canvas.Left="-465" Canvas.Top="296" Width="319"><Run Text="сколько использовать слов в тесте из словаря"/></TextBlock>
-                <TextBox x:Name="tbWordsInTest" FontSize="18" Height="34" Canvas.Left="-146" TextWrapping="Wrap" Text="" Canvas.Top="282" Width="110" KeyUp="tb_KeyPress" KeyDown="tb_KeyPress"/>
+                <TextBox x:Name="tbWordsInTest" FontSize="18" Height="34" Canvas.Left="-141" TextWrapping="Wrap" Text="" Canvas.Top="282" Width="110" KeyUp="tb_KeyPress" KeyDown="tb_KeyPress"/>
                 <TextBlock FontSize="15" Canvas.Left="-467" Canvas.Top="185" Width="183"><Run Text="интервал между тестами"/></TextBlock>
-                <TextBox x:Name="tbInterval" FontSize="18" Height="34" Canvas.Left="-293" TextWrapping="Wrap" Text="" Canvas.Top="171" Width="110" KeyDown="tb_KeyPress" KeyUp="tb_KeyPress"/>
+                <TextBox x:Name="tbInterval" FontSize="18" Height="34" Canvas.Left="-284" TextWrapping="Wrap" Text="" Canvas.Top="171" Width="110" KeyDown="tb_KeyPress" KeyUp="tb_KeyPress"/>
 
             </Canvas>
 

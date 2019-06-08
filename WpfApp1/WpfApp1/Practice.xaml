@@ -39,7 +39,7 @@
                                 <ColumnDefinition Width="181*"/>
                                 <ColumnDefinition Width="500*"/>
                             </Grid.ColumnDefinitions>
-                            <Label x:Name="lWord" FontSize="24" FontWeight="Bold" Content="Label" HorizontalAlignment="Left" Margin="143,54,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                            <Label x:Name="lWord" FontSize="24" FontWeight="Bold" Content="Translator" HorizontalAlignment="Left" Margin="118,80,0,0" VerticalAlignment="Top" Grid.Column="1"/>
                             <Label Foreground="#807D7C" FontSize="10px" Content="Введите перевод слова" HorizontalAlignment="Left" Margin="20,161,0,0" VerticalAlignment="Top" Grid.Column="1"/>
                             <TextBox x:Name="tbTestTranslate" FontSize="16px" HorizontalAlignment="Left" Height="34" Margin="20,184,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="317" Grid.Column="1" KeyUp="tbTestTranslate_KeyUp"/>
 
@@ -52,7 +52,7 @@
                             <ColumnDefinition Width="181*"/>
                             <ColumnDefinition Width="500*"/>
                         </Grid.ColumnDefinitions>
-                        <Label x:Name="wordRandom" FontSize="24" FontWeight="Bold" Content="tarnlsarot" HorizontalAlignment="Left" Margin="118,50,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                        <Label x:Name="wordRandom" FontSize="24" FontWeight="Bold" Content="tarnlsarot" HorizontalAlignment="Left" Margin="118,80,0,0" VerticalAlignment="Top" Grid.Column="1"/>
                         <Label Foreground="#807D7C" FontSize="10px" Content="Введите правильно слово" HorizontalAlignment="Left" Margin="20,161,0,0" VerticalAlignment="Top" Grid.Column="1" Width="242"/>
                         <TextBox x:Name="wordAnswer" FontSize="16px" HorizontalAlignment="Left" Height="34" Margin="20,184,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="317" Grid.Column="1" KeyUp="wordAnswer_KeyUp"/>
                         <Label Content="Текст на вкладке 3" HorizontalAlignment="Left" Margin="194,10,0,0" VerticalAlignment="Top"/>
@@ -61,8 +61,8 @@
                 <TabItem x:Name="ti4" Header="марафон">
                     <Grid Margin="0,38,0,0">
                         <Grid>
-                            <Label x:Name="lMarathonTimer" Content="15 сек. (слово 1/10)" HorizontalAlignment="Left" Margin="210,10,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
-                            <Label x:Name="lMarathon" Content="Марафон — Мarathon" HorizontalAlignment="Left" Margin="200,130,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+                            <Label x:Name="lMarathonTimer" Content="15 сек. (слово 1/10)" HorizontalAlignment="Left" Margin="218,10,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+                            <Label x:Name="lMarathon" Content="Марафон — Мarathon" HorizontalAlignment="Left" Margin="205,85,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
                             <Button x:Name="btnMarathonTrue" Content="Верно!" HorizontalAlignment="Left" Margin="162,219,0,0" VerticalAlignment="Top" Width="138" Click="BtnMarathonTrue_Click"/>
                             <Button x:Name="btnMarathonFalse" Content="Не верно!" HorizontalAlignment="Left" Margin="371,219,0,0" VerticalAlignment="Top" Width="140" Click="BtnMarathonFalse_Click"/>
                         </Grid>

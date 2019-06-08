@@ -59,7 +59,7 @@
         <Grid RenderTransformOrigin="0.503,0.498" Margin="0,44,0,90" Grid.RowSpan="2">
             <Button Margin="0,54,696,240" Click="Button1_Click" Width="233" Content="Упражнения"></Button>
             <Button Margin="0,114,696,180" Click="Button2_Click" Width="233" Content="Теория"></Button>
-            <Button Margin="0,174,696,120" Click="Button3_Click" Width="233" Content="Редактор словарей"></Button>
+            <Button Margin="0,174,696,120" Click="Button3_Click" Width="233" Content="Словари"></Button>
             <Button Margin="10,232,706,62" Content="Настройки" Click="Button4_Click"  Width="233"></Button>
             <Button Margin="0,294,696,0" Content="О программе"  Width="233"></Button>
         </Grid>
